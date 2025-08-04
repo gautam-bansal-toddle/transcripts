@@ -4,9 +4,8 @@
     "declarationDir": "build",
     "module": "esnext",
     "target": "esnext",
-    "lib": ["DOM", "ESNext"],
-    "jsx": "react-jsx",
-    "types": ["react"],
+    "lib": ["DOM", "ESNext", "DOM.Iterable"],
+    "jsx": "react",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true
