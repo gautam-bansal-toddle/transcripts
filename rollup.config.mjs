@@ -8,8 +8,6 @@ import execute from "./plugins/rollup-execute.js";
 // Determine if we are in watch mode
 const isDevelopment = process.env.ROLLUP_WATCH === "true";
 
-console.log("isDevelopment:", isDevelopment);
-
 export default {
   input: "src/index.ts",
   output: [

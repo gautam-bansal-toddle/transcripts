@@ -21,7 +21,8 @@
   "scripts": {
     "build": "rollup -c",
     "watch:web": "CURRENT_PROJECT=web rollup -c -w",
-    "watch:pdf": "CURRENT_PROJECT=pdf rollup -c -w"
+    "watch:pdf": "CURRENT_PROJECT=pdf rollup -c -w",
+    "update-packages": "npm install -g npm-check-updates && ncu -u && npm install"
   },
   "keywords": [],
   "author": "Gautam Bansal",
@@ -33,9 +34,9 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^28.0.6",
     "@rollup/plugin-node-resolve": "^16.0.1",
-    "@types/react": "^18.3.1",
+    "@types/react": "^19.1.9",
     "ncp": "^2.0.0",
-    "react": "^18.3.1",
+    "react": "^19.1.1",
     "rollup": "^4.46.2",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
