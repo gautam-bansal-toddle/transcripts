@@ -6,7 +6,7 @@
     "target": "esnext",
     "lib": ["DOM", "ESNext"],
     "sourceMap": true,
-    "jsx": "react",
+    "jsx": "preserve",
     "types": ["react"],
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
