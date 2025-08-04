@@ -1,8 +1,7 @@
-import React from "react";
 import classes from "./Button.scss";
 
 const Button = () => {
-  return <div className={classes.button}>Button</div>;
+  return <div className={classes.container}>Button</div>;
 };
 
 export default Button;

@@ -102,6 +102,7 @@ export default [
       "*.config.mjs",
       "rollup.config.mjs",
       "babel.config.json",
+      "scripts/",
     ],
   },
 ];

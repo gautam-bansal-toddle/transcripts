@@ -15,13 +15,7 @@ export default {
   output: [
     {
       file: "build/index.js",
-      format: "cjs",
-      sourcemap: true,
-    },
-    {
-      file: "build/index.es.js",
       format: "esm",
-      sourcemap: true,
     },
   ],
   plugins: [
@@ -41,17 +35,10 @@ export default {
       typescript: ts,
     }),
     postcss({
-      extract: "styles.css",
       modules: true,
-      use: [
-        [
-          "sass",
-          {
-            silenceDeprecations: ["legacy-js-api"],
-          },
-        ],
-      ],
+      use: [["sass"]],
       minimize: true,
+      inject: true,
     }),
     isDevelopment && execute("node scripts/watch.js"),
   ],
