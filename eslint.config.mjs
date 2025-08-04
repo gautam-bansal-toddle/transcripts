@@ -69,7 +69,7 @@ export default [
       "react-compiler/react-compiler": "error",
 
       // General rules
-      "no-console": "warn",
+      "no-console": "error",
       "no-debugger": "error",
       "no-unused-vars": "off", // Using @typescript-eslint/no-unused-vars instead
       "prefer-const": "error",

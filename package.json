@@ -1,6 +1,6 @@
 {
   "name": "@gautam-bansal-toddle/transcripts",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "type": "module",
   "private": false,
   "module": "build/index.js",
@@ -29,7 +29,7 @@
   "license": "ISC",
   "description": "",
   "peerDependencies": {
-    "react": ">=17.0.0"
+    "react": ">=17.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.28.0",
