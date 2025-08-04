@@ -1,11 +1,10 @@
 {
   "name": "@gautam-bansal-toddle/transcripts",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "type": "module",
   "private": false,
   "module": "build/index.js",
   "types": "build/index.d.ts",
-  "style": "build/styles.css",
   "exports": {
     ".": {
       "types": "./build/index.d.ts",
@@ -16,9 +15,10 @@
     "build"
   ],
   "scripts": {
-    "build": "rollup -c",
-    "watch:web": "CURRENT_PROJECT=web rollup -c -w",
-    "watch:pdf": "CURRENT_PROJECT=pdf rollup -c -w",
+    "build": "rm -rf build && rollup -c",
+    "watch": "rm -rf build && rollup -c -w",
+    "watch:web": "CURRENT_PROJECT=web npm run watch",
+    "watch:pdf": "CURRENT_PROJECT=pdf npm run watch",
     "update-packages": "npm install -g npm-check-updates && ncu -u && npm install",
     "lint": "eslint src/",
     "lint:fix": "eslint src/ --fix",
