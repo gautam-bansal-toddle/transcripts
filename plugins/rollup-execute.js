@@ -1,4 +1,5 @@
 import { spawn, spawnSync } from "child_process";
+import { setTimeout } from "timers/promises";
 
 function execute(commands, sync) {
   if (typeof commands === "string") {
@@ -12,16 +13,16 @@ function execute(commands, sync) {
 
   return {
     name: "execute",
-    generateBundle: function () {
+    generateBundle: () => {
       // Only execute once per build cycle
       if (hasExecuted) {
         return;
       }
       hasExecuted = true;
 
-      var copy = commands.slice(0);
-      var next = function () {
-        var command;
+      const copy = commands.slice(0);
+      const next = function () {
+        let command;
         if (!(command = copy.shift())) {
           // Reset for next build cycle
           setTimeout(() => {
@@ -31,7 +32,7 @@ function execute(commands, sync) {
         }
 
         if (sync !== undefined && sync == true) {
-          let ret = spawnSync(command, {
+          const ret = spawnSync(command, {
             shell: true,
             stdio: "inherit",
             env: process.env,
