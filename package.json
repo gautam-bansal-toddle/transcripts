@@ -1,0 +1,47 @@
+{
+  "name": "@gautam-bansal-toddle/transcripts",
+  "version": "0.0.5",
+  "type": "module",
+  "private": false,
+  "main": "build/index.js",
+  "module": "build/index.es.js",
+  "types": "build/index.d.ts",
+  "style": "build/styles.css",
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "require": "./build/index.js",
+      "import": "./build/index.es.js"
+    },
+    "./styles.css": "./build/styles.css"
+  },
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "watch:web": "CURRENT_PROJECT=web rollup -c -w",
+    "watch:pdf": "CURRENT_PROJECT=pdf rollup -c -w"
+  },
+  "keywords": [],
+  "author": "Gautam Bansal",
+  "license": "ISC",
+  "description": "",
+  "peerDependencies": {
+    "react": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.6",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@types/react": "^18.3.1",
+    "ncp": "^2.0.0",
+    "react": "^18.3.1",
+    "rollup": "^4.46.2",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "sass": "^1.89.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
+}
