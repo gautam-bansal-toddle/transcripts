@@ -5,7 +5,6 @@ import typescript from "rollup-plugin-typescript2";
 import postcss from "rollup-plugin-postcss";
 import execute from "./plugins/rollup-execute.js";
 import { babel } from "@rollup/plugin-babel";
-import ts from "typescript";
 
 // Determine if we are in watch mode
 const isDevelopment = process.env.ROLLUP_WATCH === "true";
@@ -23,17 +22,14 @@ export default {
     resolve({
       extensions: [".js", ".jsx", ".ts", ".tsx"],
     }),
-    commonjs(),
+    typescript(),
     babel({
       babelHelpers: "bundled",
       include: ["src/**/*"],
       extensions: [".js", ".jsx", ".ts", ".tsx"],
       exclude: ["node_modules/**"],
     }),
-    typescript({
-      useTsconfigDeclarationDir: true,
-      typescript: ts,
-    }),
+    commonjs(),
     postcss({
       modules: true,
       use: [["sass"]],
