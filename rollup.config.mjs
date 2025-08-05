@@ -3,6 +3,7 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "rollup-plugin-typescript2";
 import postcss from "rollup-plugin-postcss";
+import terser from "@rollup/plugin-terser";
 import execute from "./plugins/rollup-execute.js";
 import { babel } from "@rollup/plugin-babel";
 import dotenv from "dotenv";
@@ -27,6 +28,7 @@ export default {
     {
       file: "build/index.js",
       format: "esm",
+      sourcemap: isDevelopment,
     },
   ],
   plugins: [
@@ -59,6 +61,13 @@ export default {
       ],
       minimize: true,
     }),
+    // Only minify in production builds (not in development/watch mode)
+    !isDevelopment &&
+      terser({
+        format: {
+          comments: false, // Remove comments
+        },
+      }),
     isDevelopment && execute("node scripts/watch.js"),
-  ],
+  ].filter(Boolean), // Filter out falsy values (like in watch mode)
 };
