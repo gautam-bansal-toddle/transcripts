@@ -5,6 +5,18 @@ import typescript from "rollup-plugin-typescript2";
 import postcss from "rollup-plugin-postcss";
 import execute from "./plugins/rollup-execute.js";
 import { babel } from "@rollup/plugin-babel";
+import dotenv from "dotenv";
+import replace from "@rollup/plugin-replace";
+
+// Load environment variables from .env file
+const envConfig = dotenv.config().parsed;
+// Transform env variables for @rollup/plugin-replace
+const replaceValues = {};
+for (const key in envConfig) {
+  if (Object.prototype.hasOwnProperty.call(envConfig, key)) {
+    replaceValues[`process.env.${key}`] = JSON.stringify(envConfig[key]);
+  }
+}
 
 // Determine if we are in watch mode
 const isDevelopment = process.env.ROLLUP_WATCH === "true";
@@ -19,6 +31,10 @@ export default {
     },
   ],
   plugins: [
+    replace({
+      preventAssignment: true,
+      values: replaceValues,
+    }),
     peerDepsExternal(),
     resolve({
       extensions: [".js", ".jsx", ".ts", ".tsx"],

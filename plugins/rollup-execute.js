@@ -1,6 +1,6 @@
-import { spawn, spawnSync } from "child_process";
+import { spawn } from "child_process";
 
-function execute(commands, sync) {
+function execute(commands) {
   if (typeof commands === "string") {
     commands = [commands];
   }
@@ -12,32 +12,21 @@ function execute(commands, sync) {
     name: "execute",
     generateBundle() {
       const copy = commands.slice(0);
-      const next = function () {
+      const next = () => {
         let command;
         if (!(command = copy.shift())) {
           return;
         }
 
-        if (sync !== undefined && sync == true) {
-          const ret = spawnSync(command, {
-            shell: true,
-            stdio: "inherit",
-            env: process.env,
-          });
-          if (ret.status === 0) {
+        spawn(command, {
+          shell: true,
+          stdio: "inherit",
+          env: process.env,
+        }).on("close", function (code) {
+          if (code === 0) {
             next();
           }
-        } else {
-          spawn(command, {
-            shell: true,
-            stdio: "inherit",
-            env: process.env,
-          }).on("close", function (code) {
-            if (code === 0) {
-              next();
-            }
-          });
-        }
+        });
       };
       next();
     },
