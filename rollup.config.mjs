@@ -47,10 +47,17 @@ export default {
     }),
     commonjs(),
     postcss({
+      extract: "styles.css",
       modules: true,
-      use: ["sass"],
+      use: [
+        [
+          "sass",
+          {
+            silenceDeprecations: ["legacy-js-api"],
+          },
+        ],
+      ],
       minimize: true,
-      inject: true,
     }),
     isDevelopment && execute("node scripts/watch.js"),
   ],
