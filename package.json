@@ -1,6 +1,6 @@
 {
   "name": "@gautam-bansal-toddle/transcripts",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "type": "module",
   "private": false,
   "module": "build/index.js",
