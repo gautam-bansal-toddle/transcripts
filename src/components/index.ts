@@ -1,4 +1,5 @@
-import Example1 from "./Example1";
-import Example2 from "./Example2";
+import Transcripts from "./Transcripts";
+import TranscriptCanvas from "./TranscriptCanvas";
 
-export { Example1, Example2 };
+export { Transcripts, TranscriptCanvas };
+export type { TranscriptCanvasRef } from "./TranscriptCanvas";

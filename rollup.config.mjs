@@ -27,7 +27,6 @@ export default {
     {
       file: "build/index.js",
       format: "esm",
-      sourcemap: isDevelopment,
     },
   ],
   plugins: [

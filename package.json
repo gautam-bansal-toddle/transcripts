@@ -1,6 +1,6 @@
 {
   "name": "@gautam-bansal-toddle/transcripts",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "type": "module",
   "private": false,
   "module": "build/index.js",
@@ -60,6 +60,7 @@
     "typescript": "^5.9.2"
   },
   "dependencies": {
+    "html2canvas": "^1.4.1",
     "react-compiler-runtime": "^19.1.0-rc.2"
   }
 }
