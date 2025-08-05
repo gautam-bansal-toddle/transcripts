@@ -1,6 +1,6 @@
 {
   "name": "@gautam-bansal-toddle/transcripts",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "type": "module",
   "private": false,
   "module": "build/index.js",
@@ -10,7 +10,7 @@
       "types": "./build/index.d.ts",
       "import": "./build/index.js"
     },
-    "./styles": "./build/styles.css"
+    "./styles.css": "./build/styles.css"
   },
   "files": [
     "build"
