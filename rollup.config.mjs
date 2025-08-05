@@ -32,7 +32,7 @@ export default {
     commonjs(),
     postcss({
       modules: true,
-      use: [["sass"]],
+      use: ["sass"],
       minimize: true,
       inject: true,
     }),
