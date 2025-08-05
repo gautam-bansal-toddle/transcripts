@@ -5,6 +5,7 @@ import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactCompiler from "eslint-plugin-react-compiler";
 import jsxA11y from "eslint-plugin-jsx-a11y";
+import globals from "globals";
 
 export default [
   js.configs.recommended,
@@ -20,17 +21,8 @@ export default [
         },
       },
       globals: {
-        console: "readonly",
-        process: "readonly",
-        Buffer: "readonly",
-        __dirname: "readonly",
-        __filename: "readonly",
-        module: "readonly",
-        require: "readonly",
-        exports: "readonly",
-        global: "readonly",
-        window: "readonly",
-        document: "readonly",
+        ...globals.browser,
+        ...globals.node,
       },
     },
     plugins: {
@@ -69,7 +61,7 @@ export default [
       "react-compiler/react-compiler": "error",
 
       // General rules
-      "no-console": "error",
+      "no-console": "warn",
       "no-debugger": "error",
       "no-unused-vars": "off", // Using @typescript-eslint/no-unused-vars instead
       "prefer-const": "error",

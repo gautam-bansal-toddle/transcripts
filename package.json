@@ -17,8 +17,8 @@
   "scripts": {
     "build": "rm -rf build && rollup -c",
     "watch": "rm -rf build && rollup -c -w",
-    "watch:web": "CURRENT_PROJECT=web npm run watch",
-    "watch:pdf": "CURRENT_PROJECT=pdf npm run watch",
+    "watch:web": "CURRENT_PROJECT=web rollup -c -w",
+    "watch:pdf": "CURRENT_PROJECT=pdf rollup -c -w",
     "update-packages": "npm install -g npm-check-updates && ncu -u && npm install",
     "lint": "eslint src/",
     "lint:fix": "eslint src/ --fix",
@@ -39,13 +39,13 @@
     "@rollup/plugin-commonjs": "^28.0.6",
     "@rollup/plugin-node-resolve": "^16.0.1",
     "@types/react": "^19.1.9",
-    "@typescript-eslint/eslint-plugin": "^8.38.0",
-    "@typescript-eslint/parser": "^8.38.0",
+    "@typescript-eslint/eslint-plugin": "^8.39.0",
+    "@typescript-eslint/parser": "^8.39.0",
     "babel-plugin-react-compiler": "^19.1.0-rc.2",
     "eslint": "^9.32.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-compiler": "^19.0.0-beta-af1b7da-20250417",
+    "eslint-plugin-react-compiler": "^19.1.0-rc.2",
     "eslint-plugin-react-hooks": "^5.2.0",
     "ncp": "^2.0.0",
     "react": "^19.1.1",
@@ -55,7 +55,7 @@
     "rollup-plugin-typescript2": "^0.36.0",
     "sass": "^1.89.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.2"
   },
   "dependencies": {
     "react-compiler-runtime": "^19.1.0-rc.2"

@@ -20,7 +20,7 @@
       "babel-plugin-react-compiler",
       {
         "target": "17",
-        "compilationMode": "all"
+        "compilationMode": "annotation"
       }
     ]
   ]
